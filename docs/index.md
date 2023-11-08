@@ -26,5 +26,5 @@ features:
   import HelloWorld from './components/HelloWorld.vue';
 </script>
 
-<!-- <HelloWorld></HelloWorld> -->
+<HelloWorld></HelloWorld>
 

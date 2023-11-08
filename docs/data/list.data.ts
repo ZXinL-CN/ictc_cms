@@ -1,4 +1,4 @@
-import { defineLoader } from 'vitepress'
+import { defineLoader } from 'vitepress';
 
 export interface Data {
   // data type

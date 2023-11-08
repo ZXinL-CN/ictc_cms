@@ -1,11 +1,21 @@
 <script lang="ts" setup>
-import { data as list } from '../data/list.data';
+// console.log(import.meta);
+// console.log(import.meta.env);
+import { Octokit } from "octokit";
+const octokit = new Octokit({
+    auth: import.meta.env.VITE_TOKEN || process.env.TOKEN,
+});
+const onClick = async () => {
+    console.log('onClick');
+    const res = await octokit.request("GET /repos/{owner}/{repo}/issues", {
+        owner: "ZXinL-CN",
+        repo: "ictc_cms",
+    });
+    console.log(res);
+}
 </script>
 <template>
-    <h1>Hello World🚩</h1>
-    <ul>
-        <li v-for="item in list">
-            {{ item.name }}
-        </li>
-    </ul>
+    <div class="action">
+        <a class="VPButton medium alt" @click="onClick()">click</a>
+    </div>
 </template>
